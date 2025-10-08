@@ -1,0 +1,113 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+canvas {
+  display: block;
+}
+.header{
+  text-align: center; 
+  font-family:'Courier New', Courier, monospace;
+}
+.option {
+    font-family:'Courier New', Courier, monospace;
+}
+
+#dataVar {
+    field-sizing: content;
+    font-size: 35px;
+    display: block;
+    float: left;
+    margin-left: 100px;
+}
+#op{
+  field-sizing: content;
+  font-size: 15px;
+  display: block;
+  float: left;
+  margin-left: 20px;
+}
+#op1,#op2{
+    field-sizing: content;
+    font-size: 25px;
+    display: block;
+    float: left;
+    margin-left: 20px;
+    margin-top: auto;
+}
+
+#equals{
+    float: center;
+    margin-left: 50px;
+    font-size: 50px;
+}
+#data{
+    margin-left: 50px;
+    font-size: 30px;
+    float: right; 
+    field-sizing: content;
+}
+input:invalid {
+  border: 2px solid red;
+  border-radius: 5px;
+}
+
+#error{
+    float:right; 
+    color: red; 
+    font-size:0px;
+}
+input:invalid~#error{
+    float:right; 
+    color: red;
+    font-size: 15px;
+}
+
+.language{
+  border: 1px solid gray;
+  font-size: 20px;
+}
+#math{
+  visibility: visible;
+}
+#check{
+  visibility: hidden;
+  margin-left: 47%;
+}
+#selection{
+  font-size: 20px;
+}
+#selection:before{
+  content: "Data ";
+  font-weight: bold;
+  text-align: center;
+  float: center;
+}
+#check:checked + #selection:before{
+  content: "ALU";
+  font-weight: bold;
+  text-align:center;
+}
+#aluInstruction{
+  display: none;
+}
+#jump{
+  display: none;
+}
+#check:checked ~ #dataInstruction{
+  display: none;
+}
+#check:checked ~ #aluInstruction{
+  display: table; 
+}
+#check:checked ~ #jump{
+  display: table; 
+}
+#sampleTextData{
+  display: none;
+}
+#sampleTextALU{
+  display: none;
+}
+
+

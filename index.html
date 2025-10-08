@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8" />
+
+  </head>
+  <body>
+    <h1 class="header">Computer Internals Conversion Program</h1>
+    <h3 class="header">by Karsh</h3>
+    <br>
+    <table class="header" style = "margin-left: auto; margin-right: auto;">
+        <tr>
+            <td>
+                <h4 class="header">Instruction Type:</h4>
+            </td>
+            <td>
+                <h6 class="header">(click to change)</h4>
+            </td>
+        </tr>
+    </table>
+    <input type="checkbox" id="check" style="float:center">
+    <label for="check" id="selection" class="header">
+        <option id="dataInst">Instruction</option>
+    </label>
+    <br>
+    <br>
+    <!--data instruction-->
+    <table style = "margin-left: auto; margin-right: auto;" id="dataInstruction">
+        <tr>
+            <td>
+                <select id="dataVar" name="dataVar">
+                    <option id="dataA" selected>A</option>
+                    <option id="dataAd">Address</option>
+                    <option id="dataRAM">RAM</option>
+                </select>
+            </td>
+            <td>
+                <h1 id="equals">=</h1>
+            </td>
+            <td>
+                <input id="data" placeholder="67" value="0" type="number" min="0" max="16383">
+                <br>
+                <p id="error">Must be between 0 and 16383</p>
+            </td>
+        </tr>
+    </table>
+    <table style = "margin-left: auto; margin-right: auto;" id="aluInstruction">
+        <tr>
+            <td>
+                <input type="checkbox" id="aluA">
+                <label for="aluA">A</label>
+                <input type="checkbox" id="aluB">
+                <label for="aluB">B</label>
+                <input type="checkbox" id="aluAd">
+                <label for="aluAd">Address</label>
+                <input type="checkbox" id="aluRAM">
+                <label for="aluRAM">RAM</label>
+            </td>
+            <td>
+                <h1 id="equals">=</h1>
+            </td>
+            <td>
+                <select id="op1">
+                    <option id="op1A" selected>A</option>
+                    <option id="op1B">B</option>
+                    <option id="op1Address">Address</option>
+                    <option id="op1RAM">RAM</option>
+                </select>
+                <select id="op">
+                    <option id="op000" selected>plus</option>
+                    <option id="op001">minus</option>
+                    <option id="op010">less than</option>
+                    <option id="op011">equals</option>
+                    <option id="op100">or</option>
+                    <option id="op101">and</option>
+                    <optgroup label="Disregards Operand 2">
+                        <option id="op110">not(operand 1)</option>
+                        <option id="op111">Operand 1</option>
+                    </optgroup>
+                </select>
+                <select id="op2">
+                    <option id="op2A">A</option>
+                    <option id="op2B" selected>B</option>
+                    <option id="op2Address">Address</option>
+                    <option id="op2RAM">RAM</option>
+                </select>
+            </td>
+        </tr>
+        <table style="margin-left:30%;" id="jump">
+            <tr>
+                <td>Jump If Result Is...</td>
+                <td>
+                    <input type="checkbox" id="jg">
+                    <label for="jg">greater than zero</label>
+                    <input type="checkbox" id="jz">
+                    <label for="jz">equal to zero</label>
+                    <input type="checkbox" id="jl">
+                    <label for="jl">less than zero</label>
+                </td>
+            </tr>   
+        </table>
+    </table>
+    <br>
+    <button onclick="append()" style="position: absolute; margin-left: 50%; font-size: 20px; background-color: lightblue; border-radius: 15%" class="header" >
+        Append
+    </button>
+   <br>
+   <br>
+
+    <br>
+    <br>
+    <!--<p><a>t</a></p>im-->
+    <table style="margin-left: auto; margin-right: auto;">
+        <tr>
+            <td>Assembly Code:</td>
+            <td id="assemblyCode">
+                <table class="language" id="sampleTextData">
+                    <tr>
+                        <td class="language">00</td><td class="language">00000000000000</td><td><button onclick="splice()"><b>X</b></button></td><td>A=0</td>
+                    </tr>
+                </table>
+                <table class="language" id="sampleTextALU">
+                    <tr>
+                        <td class="language">00</td><td class="language">0000</td><td class="language">000</td><td class="language">00</td><td class="language">00</td><td class="language">000</td><td><button onclick="splice(0)"><b>X</b></button></td><td>A=0</td>
+                    </tr>
+                </table>
+            </td>
+            <td><button onclick="copy()">Copy</button></td>
+            <td><button onclick="copyHex()">Copy Hex</button></td>
+        </tr>
+    </table>
+    
+    <script src="script.js"></script>
+  </body>
+</html>
