@@ -68,10 +68,12 @@ A jump instruction that combines multiple conditions (e.g. greater than or equal
 The following is a program that can multiply any two numbers (indicated by the 00 and 01 registers in the RAM) and store the result in the RAM:
 
 //Initialization
+
 01 00000000000000 (Data instruction: set Address to 0)
 00 0100 111 11 11  000 (ALU instruction: B = RAM; Don’t jump)
 
 //Loop
+
 01 0000000000001 (Data instruction: set Address to 1)
 00 0001 001 11 10 000 (ALU instruction: RAM = RAM - Address (1); Don’t jump)
 11 00000000001011 (Data instruction: set A to 1110)
@@ -82,6 +84,7 @@ The following is a program that can multiply any two numbers (indicated by the 0
  00 0000 000 00 00 111 (Unconditional jump to instruction A)
 
 //Store the answer in register 3
+
 01 00000000000000 (Data instruction: set Address to 0)
 00 1000 111 11 11  000 (ALU instruction: A = RAM; Don’t jump)
 01 00000000000011 (Data instruction: set Address to 3)
