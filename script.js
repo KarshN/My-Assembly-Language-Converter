@@ -85,13 +85,13 @@ function append(){
             let operands=["A","B","Address","RAM"]
             let selectedOps=[0,1]
 
-            for(let i=0;i<3;i++){
+            for(let i=0;i<4;i++){
                 if(document.getElementById("op1"+operands[i]).selected){
                     dataSections[4].innerHTML=opcodes[i][1]+opcodes[i][2];
                     selectedOps[0]=i
                 }
             }
-            for(let i=0;i<3;i++){
+            for(let i=0;i<4;i++){
                 if(document.getElementById("op2"+operands[i]).selected){
                     dataSections[5].innerHTML=opcodes[i][1]+opcodes[i][2];
                     selectedOps[1]=i
