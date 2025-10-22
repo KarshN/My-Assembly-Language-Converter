@@ -1,6 +1,8 @@
 //all the different lines of the assembly language
 lines=[];
 
+tables=[];
+
 //appends line of assembly
 function append(){
     if(document.getElementById("data").checkValidity()){
@@ -200,14 +202,18 @@ function append(){
         }
 
         Xbutton.param1=newTable
-        Xbutton.param2=lines.length-1
+        Xbutton.param2=lines.length
         Xbutton.onclick = function() {
             splice(Xbutton.param1,Xbutton.param2);
         };
 
+        newTable.lineNum=lines.length
+        newTable.xButton=Xbutton
+
         codeElement.appendChild(newTable)
         console.log(codeElement)
         lines.push(newLine)
+        tables.push(newTable)
     }
 }
 
@@ -216,6 +222,16 @@ function splice(element,lineNum){
     console.log(element)
     element.remove()
     lines.splice(lineNum,1)
+    tables.splice(lineNum,1)
+    updateTables()
+}
+
+//update line numbers of tables
+function updateTables(){
+    for(let i=0;i<tables.length;i++){
+        tables[i].lineNum=i
+        tables[i].xButton.param2=i
+    }
 }
 
 //copies regular val
