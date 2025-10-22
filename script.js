@@ -200,7 +200,7 @@ function append(){
         }
 
         Xbutton.param1=newTable
-        Xbutton.param2=lines.length-1
+        Xbutton.param2=lines.length
         Xbutton.onclick = function() {
             splice(Xbutton.param1,Xbutton.param2);
         };
